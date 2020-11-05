@@ -1,12 +1,12 @@
-FROM nickgryg/alpine-pandas:3.7.4
+FROM python:3.8.5-alpine3.12
 
 RUN apk --update add --no-cache g++
+
+RUN pip install pandas
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-
-WORKDIR /usr/src/app
 
 ENV PYCURL_SSL_LIBRARY=openssl
 
